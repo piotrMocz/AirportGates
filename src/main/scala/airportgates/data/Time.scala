@@ -2,7 +2,7 @@ package airportgates.data
 
 import spire.implicits._
 import spire.math._
-import spire.algebra.{Trig, Field}
+import spire.algebra.{Order, Trig}
 
 /**
  * Created by Piotr on 2015-04-12.
@@ -14,6 +14,10 @@ object Time {
   def apply(t: Double) = new Time(t)
 
   def idleTimeCost(time: Time): Double = 1000 * (atan(0.21 * (5 - time.t) ) + pi / 2)
+
+  implicit def orderingTime: Ordering[Time] = new Ordering[Time] {
+    override def compare(x: Time, y: Time): GateID = x compare y
+  }
 
   implicit def trigTime: Trig[Time] = new Trig[Time] {
     override def e: Time = Time(spire.math.e)
@@ -120,7 +124,7 @@ object Time {
 
     override def fromRational(n: Rational): Time = Time(n.toDouble)
 
-    override def fromType[B](b: B)(implicit ev: ConvertableFrom[B]): Time = b.toDouble()
+    override def fromType[B](b: B)(implicit ev: ConvertableFrom[B]): Time = Time(b.toDouble())
 
     override def fromFloat(n: Float): Time = fromType[Float](n)
 
