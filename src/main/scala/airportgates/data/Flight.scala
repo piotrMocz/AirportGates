@@ -1,11 +1,6 @@
 package airportgates.data
 
-import spire.math.{Interval, Rational, atan, pi}
-import spire.implicits._
-
-/**
- * Created by Piotr on 2015-04-11.
- */
+import spire.math.Interval
 
 class Flight(val timeAtGate: Interval[Time],
              val origin: Section,

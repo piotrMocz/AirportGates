@@ -3,9 +3,6 @@ package airportgates.data
 import scala.collection.immutable.{SortedMap => Map}
 import spire.implicits._
 
-/**
- * Created by Piotr on 2015-04-12.
- */
 class Timeline(val states: Map[Time, AirportState]) {
 
   // this method tries to return a valid airport state.

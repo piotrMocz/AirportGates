@@ -4,10 +4,6 @@ import spire.implicits._
 import spire.math._
 import spire.algebra.{Order, Trig}
 
-/**
- * Created by Piotr on 2015-04-12.
- */
-
 class Time(val t: Double)
 
 object Time {

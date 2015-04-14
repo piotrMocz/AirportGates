@@ -1,11 +1,5 @@
 package airportgates.data
 
-import spire.math.Interval
-
-/**
- * Created by Piotr on 2015-04-11.
- */
-
 class Gate(val id: GateID,
            val possibleRegions: Set[Section],
            val possibleSizeCategories: Set[Category],

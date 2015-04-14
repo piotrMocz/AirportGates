@@ -1,9 +1,5 @@
 package airportgates.data
 
-/**
- * Created by Piotr on 2015-04-12.
- */
-
 class AirportState(val gates: Map[GateID, Gate],
                    val assignments: Map[Flight, Gate]) {
 
